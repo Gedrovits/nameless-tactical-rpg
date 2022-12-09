@@ -2,6 +2,16 @@
 
 https://github.com/Gedrovits/nameless-tactical-rpg
 
+## Proof of Concept
+
+* [x] Routes as screens and world navigation (e.g. Main Menu, Battle, Inventory, Shop, etc)
+* [ ] Save/Load to allow sharing progress and state across devices or bug reporting
+* [ ] Rely on dices to do the magic, except percentage for KISS
+* [ ] Battles should be 1v1 as a start, expanded to 3v3 and experiment with 9x9 grid to move units around
+* [ ] Random encounters, nothing special, just do multiple fights before you die.
+* [ ] Simple inventory management.
+* [ ] Test time flow core loop, with player doing the continue/pause to fight or build in process.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
