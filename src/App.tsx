@@ -3,6 +3,7 @@ import { MainMenu } from './features/main-menu/MainMenu';
 import { StartGame } from './features/main-menu/StartGame';
 import { ContinueGame } from './features/main-menu/ContinueGame';
 import { Game } from './features/game/Game';
+import { Spaceships } from './features/spaceships/Spaceships'
 
 import './App.css';
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/start-game" element={<StartGame />} />
         <Route path="/continue-game" element={<ContinueGame />} />
         <Route path="/game" element={<Game />} />
+        <Route path="/spaceships" element={<Spaceships />} />
       </Routes>
     </div>
   );
