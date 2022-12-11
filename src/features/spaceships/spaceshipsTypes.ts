@@ -15,3 +15,19 @@ export enum HullType {
   Battleship = 'Battleship',
   Carrier = 'Carrier',
 }
+
+export interface Spaceship {
+  id: string
+  // Hull Design
+  hullSize: HullSize
+  hullType: HullType
+  // HP
+  hitPoints: number
+  maxHitPoints: number
+  // AP
+  armorPoints: number
+  maxArmorPoints: number
+  // SP
+  shieldPoints: number
+  maxShieldPoints: number
+}

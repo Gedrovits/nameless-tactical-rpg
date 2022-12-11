@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { 
   initialSpaceshipState, 
@@ -10,6 +11,7 @@ import { HullSize, HullType } from './spaceshipsTypes';
 
 import styles from './Spaceships.module.css';
 import logo from '../../logo.svg';
+import { setLeftSpaceship, setRightSpaceship } from '../battle/battleSlice';
 
 export function Spaceships() {
   const dispatch = useAppDispatch();
@@ -31,6 +33,8 @@ export function Spaceships() {
     }
 
     dispatch(addSpaceship(spaceship))
+    // Reset
+    setId('')
   }
 
   const hullSizeOptions = Object.keys(HullSize).map((hullSize) => (
@@ -75,6 +79,10 @@ export function Spaceships() {
                 <p>
                   <button type="button" onClick={() => dispatch(removeSpaceship(e.id))}>Remove</button>
                 </p>
+                <p>
+                  <button type="button" onClick={() => dispatch(setLeftSpaceship(e))}>Set Left Ship</button>
+                  <button type="button" onClick={() => dispatch(setRightSpaceship(e))}>Set Right Ship</button>
+                </p>
               </div>
             </div>
           </div>
@@ -96,11 +104,14 @@ export function Spaceships() {
             {hullSizeOptions}
           </select>
           <label htmlFor="hullType">Hull Type:</label>
-          <select id="hullType" value={hullSize} onChange={onHullTypeChanged}>
+          <select id="hullType" value={hullType} onChange={onHullTypeChanged}>
             {hullTypeOptions}
           </select>
           <button type="button" onClick={onSaveClicked}>Save</button>
         </form>
+      </section>
+      <section>
+        <Link to="/battle">Battle!</Link>
       </section>
     </div>
   );
