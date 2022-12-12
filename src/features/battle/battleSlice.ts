@@ -18,6 +18,7 @@ export const battleSlice = createSlice({
   initialState,
   // FIXME: Refactor
   reducers: {
+    reset: () => initialState,
     changeStatus: (state, action: PayloadAction<BattleState['status']>) => {
       state.status = action.payload
     },
@@ -31,6 +32,7 @@ export const battleSlice = createSlice({
 });
 
 export const {
+  reset,
   changeStatus,
   setLeftSpaceshipId,
   setRightSpaceshipId,

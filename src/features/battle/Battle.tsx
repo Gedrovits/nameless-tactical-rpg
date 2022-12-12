@@ -1,10 +1,8 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { changeStatus } from '../battle/battleSlice'
+import { changeStatus, reset } from '../battle/battleSlice'
 import { selectSpaceshipById, modifySpaceship } from '../spaceships/spaceshipsSlice';
-import { LeftSpaceship } from './LeftSpaceship'
-import { RightSpaceship } from './RightSpaceship'
+import { Spaceship } from '../spaceships/Spaceship';
 
 import styles from './Battle.module.css';
 
@@ -22,7 +20,7 @@ export function Battle() {
         <div className={styles['grid-item']}>
           <h1>Left Spaceship</h1>
           {leftSpaceshipId && (
-            <LeftSpaceship />
+            <Spaceship spaceshipId={leftSpaceshipId} />
           )}
           {leftSpaceshipId && leftSpaceship && (
             <button type="button" onClick={() => dispatch(modifySpaceship({...leftSpaceship, hitPoints: leftSpaceship.hitPoints - 10}))}>-10 HP</button>
@@ -36,11 +34,12 @@ export function Battle() {
           <h2>{status === 'idle' ? 'No battle in progress?' : 'Fight!'}</h2>
           <button type="button" onClick={() => dispatch(changeStatus('idle'))}>Stop Battle!</button>
           <button type="button" onClick={() => dispatch(changeStatus('active'))}>Start Battle!</button>
+          <button type="button" onClick={() => dispatch(reset())}>Reset Battle!</button>
         </div>
         <div className={styles['grid-item']}>
           <h1>Right Spaceship</h1>
           {rightSpaceshipId && (
-            <RightSpaceship />
+            <Spaceship spaceshipId={rightSpaceshipId} />
           )}
           {rightSpaceshipId && rightSpaceship && (
             <button type="button" onClick={() => dispatch(modifySpaceship({...rightSpaceship, hitPoints: rightSpaceship.hitPoints - 10}))}>-10 HP</button>
