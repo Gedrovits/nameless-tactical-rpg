@@ -31,3 +31,15 @@ export interface Spaceship {
   shieldPoints: number
   maxShieldPoints: number
 }
+
+export const initialSpaceship: Spaceship = {
+    id: '',
+    hullSize: HullSize.Tiny,
+    hullType: HullType.Shuttle,
+    hitPoints: 100,
+    maxHitPoints: 100,
+    armorPoints: 0,
+    maxArmorPoints: 0,
+    shieldPoints: 0,
+    maxShieldPoints: 0
+}

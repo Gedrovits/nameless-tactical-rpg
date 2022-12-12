@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { changeStatus, modifyLeftSpaceship, modifyRightSpaceship } from '../battle/battleSlice'
+import { changeStatus } from '../battle/battleSlice'
+import { selectSpaceshipById, modifySpaceship } from '../spaceships/spaceshipsSlice';
 import { LeftSpaceship } from './LeftSpaceship'
 import { RightSpaceship } from './RightSpaceship'
 
@@ -9,7 +10,10 @@ import styles from './Battle.module.css';
 
 export function Battle() {
   const dispatch = useAppDispatch();
-  const { status, leftSpaceship, rightSpaceship } = useAppSelector((state) => state.battle);
+
+  const { status, leftSpaceshipId, rightSpaceshipId } = useAppSelector((state) => state.battle);
+  const leftSpaceship = useAppSelector((state) => selectSpaceshipById(state, leftSpaceshipId))
+  const rightSpaceship = useAppSelector((state) => selectSpaceshipById(state, rightSpaceshipId))
 
   return (
     <div>
@@ -17,14 +21,14 @@ export function Battle() {
       <div className={styles['grid-container']}>
         <div className={styles['grid-item']}>
           <h1>Left Spaceship</h1>
-          {leftSpaceship && (
+          {leftSpaceshipId && (
             <LeftSpaceship />
           )}
-          {leftSpaceship && (
-            <button type="button" onClick={() => dispatch(modifyLeftSpaceship({...leftSpaceship, hitPoints: leftSpaceship.hitPoints - 10}))}>-10 HP</button>
+          {leftSpaceshipId && leftSpaceship && (
+            <button type="button" onClick={() => dispatch(modifySpaceship({...leftSpaceship, hitPoints: leftSpaceship.hitPoints - 10}))}>-10 HP</button>
           )}
-          {leftSpaceship && (
-            <button type="button" onClick={() => dispatch(modifyLeftSpaceship({...leftSpaceship, hitPoints: leftSpaceship.hitPoints + 10}))}>+10 HP</button>
+          {leftSpaceshipId && leftSpaceship && (
+            <button type="button" onClick={() => dispatch(modifySpaceship({...leftSpaceship, hitPoints: leftSpaceship.hitPoints + 10}))}>+10 HP</button>
           )}
         </div>
         <div className={styles['grid-item']}>
@@ -35,14 +39,14 @@ export function Battle() {
         </div>
         <div className={styles['grid-item']}>
           <h1>Right Spaceship</h1>
-          {rightSpaceship && (
+          {rightSpaceshipId && (
             <RightSpaceship />
           )}
-          {rightSpaceship && (
-            <button type="button" onClick={() => dispatch(modifyRightSpaceship({...rightSpaceship, hitPoints: rightSpaceship.hitPoints - 10}))}>-10 HP</button>
+          {rightSpaceshipId && rightSpaceship && (
+            <button type="button" onClick={() => dispatch(modifySpaceship({...rightSpaceship, hitPoints: rightSpaceship.hitPoints - 10}))}>-10 HP</button>
           )}
-          {rightSpaceship && (
-            <button type="button" onClick={() => dispatch(modifyRightSpaceship({...rightSpaceship, hitPoints: rightSpaceship.hitPoints + 10}))}>+10 HP</button>
+          {rightSpaceshipId && rightSpaceship && (
+            <button type="button" onClick={() => dispatch(modifySpaceship({...rightSpaceship, hitPoints: rightSpaceship.hitPoints + 10}))}>+10 HP</button>
           )}
         </div>
         <section>

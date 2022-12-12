@@ -1,17 +1,16 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { 
-  initialSpaceshipState, 
+import {
   addSpaceship,
   removeSpaceship,
   modifySpaceship
 } from '../spaceships/spaceshipsSlice';
-import { HullSize, HullType } from './spaceshipsTypes';
+import { HullSize, HullType, initialSpaceship } from './spaceshipsTypes';
 
 import styles from './Spaceships.module.css';
 import logo from '../../logo.svg';
-import { setLeftSpaceship, setRightSpaceship } from '../battle/battleSlice';
+import { setLeftSpaceshipId, setRightSpaceshipId } from '../battle/battleSlice';
 
 export function Spaceships() {
   const dispatch = useAppDispatch();
@@ -26,7 +25,7 @@ export function Spaceships() {
   const onHullTypeChanged = (e: React.ChangeEvent<HTMLSelectElement>) => setHullType(e.target.value as HullType)
   const onSaveClicked = () => {
     const spaceship ={
-      ...initialSpaceshipState,
+      ...initialSpaceship,
       id: id,
       hullSize: hullSize,
       hullType: hullType,
@@ -80,8 +79,8 @@ export function Spaceships() {
                   <button type="button" onClick={() => dispatch(removeSpaceship(e.id))}>Remove</button>
                 </p>
                 <p>
-                  <button type="button" onClick={() => dispatch(setLeftSpaceship(e))}>Set Left Ship</button>
-                  <button type="button" onClick={() => dispatch(setRightSpaceship(e))}>Set Right Ship</button>
+                  <button type="button" onClick={() => dispatch(setLeftSpaceshipId(e.id))}>Set Left Ship</button>
+                  <button type="button" onClick={() => dispatch(setRightSpaceshipId(e.id))}>Set Right Ship</button>
                 </p>
               </div>
             </div>

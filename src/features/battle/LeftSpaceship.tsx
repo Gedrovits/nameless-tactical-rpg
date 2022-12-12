@@ -7,7 +7,8 @@ import logo from '../../logo.svg';
 
 export function LeftSpaceship() {
   const dispatch = useAppDispatch();
-  const { leftSpaceship } = useAppSelector((state) => state.battle);
+  const { leftSpaceshipId } = useAppSelector((state) => state.battle);
+  const leftSpaceship = useAppSelector((state) => state.spaceships.entities.find(e => e.id === leftSpaceshipId))
 
   return (
     <div>
