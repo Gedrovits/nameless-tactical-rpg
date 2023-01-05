@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.3ac21d87.css",
-    "main.js": "/static/js/main.1b1215f4.js",
-    "static/js/787.fbe448a1.chunk.js": "/static/js/787.fbe448a1.chunk.js",
-    "static/media/Destroyer.jpg": "/static/media/Destroyer.c644b9cd0bf1a3b5b5b0.jpg",
-    "static/media/Cruiser.jpg": "/static/media/Cruiser.d90e3a3211852bf1da1a.jpg",
-    "static/media/Carrier.jpg": "/static/media/Carrier.6f00148d871aea1e20c5.jpg",
-    "static/media/Frigate.jpg": "/static/media/Frigate.c222c5b150eec6434081.jpg",
-    "static/media/Battleship.jpg": "/static/media/Battleship.37972e9b686717d860e5.jpg",
-    "static/media/Shuttle.jpg": "/static/media/Shuttle.76cb15041f29f16c9fc5.jpg",
-    "index.html": "/index.html",
-    "main.3ac21d87.css.map": "/static/css/main.3ac21d87.css.map",
-    "main.1b1215f4.js.map": "/static/js/main.1b1215f4.js.map",
-    "787.fbe448a1.chunk.js.map": "/static/js/787.fbe448a1.chunk.js.map"
+    "main.css": "/nameless-tactical-rpg/static/css/main.3ac21d87.css",
+    "main.js": "/nameless-tactical-rpg/static/js/main.8a863b71.js",
+    "static/js/787.fbe448a1.chunk.js": "/nameless-tactical-rpg/static/js/787.fbe448a1.chunk.js",
+    "static/media/Destroyer.jpg": "/nameless-tactical-rpg/static/media/Destroyer.c644b9cd0bf1a3b5b5b0.jpg",
+    "static/media/Cruiser.jpg": "/nameless-tactical-rpg/static/media/Cruiser.d90e3a3211852bf1da1a.jpg",
+    "static/media/Carrier.jpg": "/nameless-tactical-rpg/static/media/Carrier.6f00148d871aea1e20c5.jpg",
+    "static/media/Frigate.jpg": "/nameless-tactical-rpg/static/media/Frigate.c222c5b150eec6434081.jpg",
+    "static/media/Battleship.jpg": "/nameless-tactical-rpg/static/media/Battleship.37972e9b686717d860e5.jpg",
+    "static/media/Shuttle.jpg": "/nameless-tactical-rpg/static/media/Shuttle.76cb15041f29f16c9fc5.jpg",
+    "index.html": "/nameless-tactical-rpg/index.html",
+    "main.3ac21d87.css.map": "/nameless-tactical-rpg/static/css/main.3ac21d87.css.map",
+    "main.8a863b71.js.map": "/nameless-tactical-rpg/static/js/main.8a863b71.js.map",
+    "787.fbe448a1.chunk.js.map": "/nameless-tactical-rpg/static/js/787.fbe448a1.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3ac21d87.css",
-    "static/js/main.1b1215f4.js"
+    "static/js/main.8a863b71.js"
   ]
 }
