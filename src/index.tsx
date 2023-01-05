@@ -13,7 +13,8 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      {/* If you are using React Router you'll need to tell it to use the repo-name as the basename. */}
+      <BrowserRouter basename="/nameless-tactical-rpg">
         <App />
       </BrowserRouter>
     </Provider>
